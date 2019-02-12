@@ -1471,7 +1471,7 @@ void run_one_test(void)
              AO_fetch_and_add1(&atomic_count);
              GC_FREE(GC_MALLOC_ATOMIC_IGNORE_OFF_PAGE(1));
              GC_disable();
-             GC_FREE(GC_MALLOC_IGNORE_OFF_PAGE(2));
+             //GC_FREE(GC_MALLOC_IGNORE_OFF_PAGE(2));
              GC_enable();
            }
          }
