@@ -1770,6 +1770,10 @@ void check_heap_stats(void)
               (unsigned long)GC_get_memory_use());
     GC_printf("Final heap size is %lu bytes\n",
                   (unsigned long)GC_get_heap_size());
+    GC_printf("Total heap size is %lu bytes\n",
+                  (unsigned long)(GC_get_heap_size() + GC_get_unmapped_bytes()));
+    GC_printf("Limit heap size is %lu bytes\n",
+                  (unsigned long)max_heap_sz);
     if (GC_get_total_bytes() < (size_t)n_tests *
 #   ifdef VERY_SMALL_CONFIG
         2700000
