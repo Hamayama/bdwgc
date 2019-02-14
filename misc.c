@@ -1778,7 +1778,7 @@ GC_API GC_warn_proc GC_CALL GC_get_warn_proc(void)
     GC_find_leak = FALSE; /* disable at-exit GC_gcollect()  */
 
     if (msg != NULL) {
-#     if defined(MSWIN32)
+#     if defined(MSWIN32) && !defined(NO_ABORT_MSGBOX)
         GC_win32_MessageBoxA(msg, "Fatal error in GC", MB_ICONERROR | MB_OK);
         /* Also duplicate msg to GC log file.   */
 #     endif
