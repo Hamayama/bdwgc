@@ -1473,9 +1473,9 @@ void run_one_test(void)
              test_generic_malloc_or_special(GC_malloc_atomic(1));
              AO_fetch_and_add1(&atomic_count);
              GC_FREE(GC_MALLOC_ATOMIC_IGNORE_OFF_PAGE(1));
-             GC_disable();
+             //GC_disable();
              GC_FREE(GC_MALLOC_IGNORE_OFF_PAGE(2));
-             GC_enable();
+             //GC_enable();
            }
          }
 #   ifdef GC_GCJ_SUPPORT
